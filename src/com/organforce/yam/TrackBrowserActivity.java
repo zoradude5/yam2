@@ -641,6 +641,7 @@ public class TrackBrowserActivity extends ListActivity
     @Override
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfoIn) {
         menu.add(0, PLAY_SELECTION, 0, R.string.play_selection);
+        menu.add(0, PLAY_NEXT, 0, R.string.play_next);
         SubMenu sub = menu.addSubMenu(0, ADD_TO_PLAYLIST, 0, R.string.add_to_playlist);
         MusicUtils.makePlaylistMenu(this, sub);
         if (mEditMode) {
@@ -679,6 +680,11 @@ public class TrackBrowserActivity extends ListActivity
                 int position = mSelectedPosition;
                 MusicUtils.playAll(this, mTrackCursor, position);
                 return true;
+            }
+            
+            case PLAY_NEXT: {
+            	MusicUtils.playNext(mTrackCursor, mSelectedPosition);
+            	return true;
             }
 
             case QUEUE: {

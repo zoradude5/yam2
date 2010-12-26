@@ -89,6 +89,7 @@ public class MusicUtils {
         public final static int SCAN_DONE = 11;
         public final static int QUEUE = 12;
         public final static int CHILD_MENU_BASE = 13; // this should be the last item
+        public final static int PLAY_NEXT = 100;
     }
 
     public static String makeAlbumsLabel(Context context, int numalbums, int numsongs, boolean isUnknown) {
@@ -808,6 +809,19 @@ public class MusicUtils {
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(intent);
         }
+    }
+    
+    public static void playNext(Cursor cursor, int position) {
+    	cursor.moveToPosition(position);
+    	playNext(cursor.getLong(
+    			cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)));
+    }
+    
+    public static void playNext(long item) {
+    	try {
+			sService.enqueue(new long[]{item}, MediaPlaybackService.NEXT);
+		} catch (RemoteException e) {
+		}
     }
     
     public static void clearQueue() {
