@@ -28,7 +28,7 @@
 
     <application android:icon="@drawable/app_music"
         android:label="@string/musicbrowserlabel"
-        android:taskAffinity="android.task.music"
+        android:taskAffinity="yam.task.music"
         android:allowTaskReparenting="true">
         <meta-data
             android:name="android.app.default_searchable"
@@ -39,8 +39,8 @@
         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--  <action android:name="android.intent.action.MUSIC_PLAYER" />-->
-                <category android:name="android.intent.category.DEFAULT" />
+                <!--  <action android:name="android.intent.action.MUSIC_PLAYER" />
+                <category android:name="android.intent.category.DEFAULT" />-->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -168,7 +168,7 @@
 
         </activity-alias>
         <activity android:name="com.organforce.yam.VideoBrowserActivity"
-            android:taskAffinity="android.task.video"
+            android:taskAffinity="yam.task.video"
             android:label="@string/videobrowserlabel"
             android:icon="@drawable/app_video">
             <intent-filter>
