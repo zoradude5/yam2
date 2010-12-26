@@ -18,49 +18,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/album"
-            android:background="@drawable/album_border_large"
-            android:layout_width="220dip"
-            android:layout_height="220dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="2dip"
-            android:layout_marginTop="8dip" />
-
-        <LinearLayout
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-
-           <ImageButton android:id="@+id/curplaylist"
-                android:src="@drawable/ic_mp_current_playlist_btn"
-                android:layout_width="85dip"
-                android:layout_height="54dip"
-                android:layout_marginTop="14dip" />
-
-           <ImageButton android:id="@+id/shuffle"
-                android:layout_width="85dip"
-                android:layout_height="54dip"
-                android:layout_marginTop="20dip" />
-
-           <ImageButton android:id="@+id/repeat"
-                android:layout_width="85dip"
-                android:layout_height="54dip"
-                android:layout_marginTop="20dip" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+<!-- "0dip"=layout_height -->
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -68,8 +26,7 @@
         android:orientation="horizontal"
         android:baselineAligned="false"
         android:paddingLeft="11dip"
-        android:paddingTop="4dip"
-        android:paddingBottom="8dip">
+        android:paddingBottom="2dip">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -93,17 +50,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:baselineAligned="false"
+        
+        android:visibility="gone"
+        
         android:paddingLeft="11dip"
-        android:paddingTop="4dip"
-        android:paddingBottom="8dip">
+        android:paddingBottom="2dip">
 
         <ImageView
+        
+        	android:visibility="gone"
+        	
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="4dip"
             android:src="@drawable/ic_mp_album_playback" />
 
         <TextView android:id="@+id/albumname"
+        
+        	android:visibility="gone"
+        	
             android:textSize="14sp"
             android:singleLine="true"
             android:ellipsize="end"
@@ -119,8 +84,7 @@
         android:orientation="horizontal"
         android:baselineAligned="false"
         android:paddingLeft="11dip"
-        android:paddingTop="0dip"
-        android:paddingBottom="8dip">
+        android:paddingBottom="0dip">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -136,6 +100,52 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/album"
+            android:background="@drawable/album_border_large"
+            android:layout_width="220dip"
+            android:layout_height="220dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="2dip"
+            android:layout_marginBottom="8dip" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+       <ImageButton android:id="@+id/library"
+            android:src="@drawable/ic_menu_music_library"
+            android:layout_width="85dip"
+            android:layout_height="54dip"
+            android:layout_marginTop="2dip" />
+
+       <ImageButton android:id="@+id/shuffle"
+            android:layout_width="85dip"
+            android:layout_height="54dip"
+            android:layout_marginTop="2dip" />
+
+       <ImageButton android:id="@+id/repeat"
+            android:layout_width="85dip"
+            android:layout_height="54dip"
+            android:layout_marginTop="2dip" />
+
+       <ImageButton android:id="@+id/curplaylist"
+            android:src="@drawable/ic_mp_current_playlist_btn"
+            android:layout_width="85dip"
+            android:layout_height="54dip"
+            android:layout_marginTop="2dip" />
     </LinearLayout>
 
     <include layout="@layout/audio_player_common" />

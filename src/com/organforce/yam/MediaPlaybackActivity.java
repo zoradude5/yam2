@@ -81,6 +81,7 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
     private ImageButton mRepeatButton;
     private ImageButton mShuffleButton;
     private ImageButton mQueueButton;
+    private ImageButton mLibraryButton;
     private Worker mAlbumArtWorker;
     private AlbumArtHandler mAlbumArtHandler;
     private Toast mToast;
@@ -137,9 +138,11 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
 
         mDeviceHasDpad = (getResources().getConfiguration().navigation ==
             Configuration.NAVIGATION_DPAD);
-        
+
         mQueueButton = (ImageButton) findViewById(R.id.curplaylist);
         mQueueButton.setOnClickListener(mQueueListener);
+        mLibraryButton = (ImageButton) findViewById(R.id.library);
+        mLibraryButton.setOnClickListener(mLibraryListener);
         mShuffleButton = ((ImageButton) findViewById(R.id.shuffle));
         mShuffleButton.setOnClickListener(mShuffleListener);
         mRepeatButton = ((ImageButton) findViewById(R.id.repeat));
@@ -396,6 +399,12 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
         }
     };
     
+    private View.OnClickListener mLibraryListener = new View.OnClickListener() {
+        public void onClick(View v) {
+        	gotoLibrary();
+        }
+    };
+    
     private View.OnClickListener mQueueListener = new View.OnClickListener() {
         public void onClick(View v) {
             startActivity(
@@ -584,11 +593,7 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
         try {
             switch (item.getItemId()) {
                 case GOTO_START:
-                    intent = new Intent();
-                    intent.setClass(this, MusicBrowserActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    finish();
+                	gotoLibrary();
                     break;
                 case USE_AS_RINGTONE: {
                     // Set the system setting to make this the current ringtone
@@ -638,7 +643,15 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
         return super.onOptionsItemSelected(item);
     }
     
-    @Override
+    private void gotoLibrary() {
+        Intent intent = new Intent();
+        intent.setClass(this, MusicBrowserActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+	}
+
+	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (resultCode != RESULT_OK) {
             return;
