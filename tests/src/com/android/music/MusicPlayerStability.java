@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.android.music.tests;
+package com.organforce.yam.tests;
 
 import android.app.Instrumentation;
-import com.android.music.TrackBrowserActivity;
+import com.organforce.yam.TrackBrowserActivity;
 import android.view.KeyEvent;
 import android.widget.ListView;
 
@@ -34,7 +34,7 @@ public class MusicPlayerStability extends ActivityInstrumentationTestCase2 <Trac
     private ListView mTrackList;
 
     public MusicPlayerStability() {
-        super("com.android.music",TrackBrowserActivity.class);
+        super("com.organforce.yam",TrackBrowserActivity.class);
     }
 
     @Override

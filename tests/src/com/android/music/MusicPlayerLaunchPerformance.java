@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.music.tests;
+package com.organforce.yam.tests;
 
 import android.app.Activity;
 import android.test.LaunchPerformanceBase;
@@ -37,7 +37,7 @@ public class MusicPlayerLaunchPerformance extends LaunchPerformanceBase {
     public void onCreate(Bundle arguments) {
         super.onCreate(arguments);
 
-        mIntent.setClassName(getTargetContext(), "com.android.music.MusicBrowserActivity");
+        mIntent.setClassName(getTargetContext(), "com.organforce.yam.MusicBrowserActivity");
         start();
     }
 

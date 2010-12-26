@@ -15,23 +15,23 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.music.tests">
+    package="com.organforce.yam.tests">
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
-    <instrumentation android:name="com.android.music.tests.MusicPlayerLaunchPerformance"
+    <instrumentation android:name="com.organforce.yam.tests.MusicPlayerLaunchPerformance"
         android:targetPackage="com.google.android.music"
         android:label="Music Launch Performance">
     </instrumentation>
     
-    <instrumentation android:name="com.android.music.tests.MusicPlayerFunctionalTestRunner"
+    <instrumentation android:name="com.organforce.yam.tests.MusicPlayerFunctionalTestRunner"
         android:targetPackage="com.google.android.music"
         android:label="Music Player Functional Test">
     </instrumentation>
     
-    <instrumentation android:name="com.android.music.tests.MusicPlayerStressTestRunner"
+    <instrumentation android:name="com.organforce.yam.tests.MusicPlayerStressTestRunner"
         android:targetPackage="com.google.android.music"
         android:label="Music Player Stress Test">
     </instrumentation>

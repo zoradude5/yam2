@@ -16,9 +16,9 @@
 ** limitations under the License.
 */
 -->
-<com.android.music.CheckableRelativeLayout
+<com.organforce.yam.CheckableRelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="64dip"
     android:gravity="center_vertical"
     android:ignoreGravity="@+id/radio">
@@ -76,4 +76,4 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="6dip" />
         
-</com.android.music.CheckableRelativeLayout>
+</com.organforce.yam.CheckableRelativeLayout>

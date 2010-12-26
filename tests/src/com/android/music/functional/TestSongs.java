@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.music.tests.functional;
+package com.organforce.yam.tests.functional;
 
 import android.app.Activity;
 import android.content.*;
@@ -34,11 +34,11 @@ import android.content.Intent;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 
-import com.android.music.CreatePlaylist;
-import com.android.music.TrackBrowserActivity;
-import com.android.music.MusicUtils;
+import com.organforce.yam.CreatePlaylist;
+import com.organforce.yam.TrackBrowserActivity;
+import com.organforce.yam.MusicUtils;
 
-import com.android.music.tests.MusicPlayerNames;
+import com.organforce.yam.tests.MusicPlayerNames;
 
 import java.io.*;
 
@@ -50,7 +50,7 @@ public class TestSongs extends ActivityInstrumentationTestCase <TrackBrowserActi
     private static String TAG = "musicplayertests";
     
     public TestSongs() {
-        super("com.android.music",TrackBrowserActivity.class);
+        super("com.organforce.yam",TrackBrowserActivity.class);
     }
 
     @Override 

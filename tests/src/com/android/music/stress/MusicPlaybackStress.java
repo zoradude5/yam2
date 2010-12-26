@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.music.tests.stress;
+package com.organforce.yam.tests.stress;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -29,16 +29,16 @@ import android.util.Log;
 import android.content.Context;
 
 
-import com.android.music.MusicBrowserActivity;
-import com.android.music.MusicUtils;
-import com.android.music.TrackBrowserActivity;
-import com.android.music.tests.MusicPlayerNames;
+import com.organforce.yam.MusicBrowserActivity;
+import com.organforce.yam.MusicUtils;
+import com.organforce.yam.TrackBrowserActivity;
+import com.organforce.yam.tests.MusicPlayerNames;
 
 public class MusicPlaybackStress extends ActivityInstrumentationTestCase <TrackBrowserActivity>{
     private static String TAG = "mediaplayertests";
   
     public MusicPlaybackStress() {
-      super("com.android.music",TrackBrowserActivity.class);
+      super("com.organforce.yam",TrackBrowserActivity.class);
     }
   
     @Override 
@@ -56,7 +56,7 @@ public class MusicPlaybackStress extends ActivityInstrumentationTestCase <TrackB
       Activity mediaPlaybackActivity;
       try{
         Instrumentation inst = getInstrumentation();
-        ActivityMonitor mediaPlaybackMon = inst.addMonitor("com.android.music.MediaPlaybackActivity", 
+        ActivityMonitor mediaPlaybackMon = inst.addMonitor("com.organforce.yam.MediaPlaybackActivity", 
           null, false);
         inst.invokeMenuActionSync(getActivity(), MusicUtils.Defs.CHILD_MENU_BASE + 3, 0);
         Thread.sleep(MusicPlayerNames.WAIT_LONG_TIME);

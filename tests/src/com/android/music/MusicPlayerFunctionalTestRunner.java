@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.android.music.tests;
+package com.organforce.yam.tests;
 
 import android.test.InstrumentationTestRunner;
 import android.test.InstrumentationTestSuite;
-import com.android.music.tests.functional.TestSongs;
-import com.android.music.tests.functional.TestPlaylist;
+import com.organforce.yam.tests.functional.TestSongs;
+import com.organforce.yam.tests.functional.TestPlaylist;
 
 import junit.framework.TestSuite;
 
@@ -32,7 +32,7 @@ import junit.framework.TestSuite;
  * Running all tests:
  *
  * adb shell am instrument \
- *   -w com.android.music.tests/.MusicPlayerFunctionalTestRunner
+ *   -w com.organforce.yam.tests/.MusicPlayerFunctionalTestRunner
  */
 
 public class MusicPlayerFunctionalTestRunner extends InstrumentationTestRunner {

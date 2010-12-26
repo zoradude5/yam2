@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.music.tests.functional;
+package com.organforce.yam.tests.functional;
 
 import android.app.Activity;
 import android.content.*;
@@ -28,13 +28,13 @@ import android.provider.MediaStore;
 import android.content.ContentResolver;
 import android.database.Cursor;
 
-import com.android.music.CreatePlaylist;
-import com.android.music.MusicUtils;
-import com.android.music.PlaylistBrowserActivity;
-import com.android.music.TrackBrowserActivity;
+import com.organforce.yam.CreatePlaylist;
+import com.organforce.yam.MusicUtils;
+import com.organforce.yam.PlaylistBrowserActivity;
+import com.organforce.yam.TrackBrowserActivity;
 
-import com.android.music.tests.MusicPlayerNames;
-import com.android.music.tests.functional.TestSongs;
+import com.organforce.yam.tests.MusicPlayerNames;
+import com.organforce.yam.tests.functional.TestSongs;
 
 /**
  * Junit / Instrumentation test case for the PlaylistBrowserActivity
@@ -45,7 +45,7 @@ public class TestPlaylist extends ActivityInstrumentationTestCase <PlaylistBrows
     private static String TAG = "musicplayertests";
   
     public TestPlaylist() {
-        super("com.android.music",PlaylistBrowserActivity.class);
+        super("com.organforce.yam",PlaylistBrowserActivity.class);
     }
 
     @Override 
@@ -84,11 +84,11 @@ public class TestPlaylist extends ActivityInstrumentationTestCase <PlaylistBrows
     public void addNewPlaylist(String playListName) throws Exception{
         Instrumentation inst = getInstrumentation();
         Activity trackBrowserActivity;
-        ActivityMonitor trackBrowserMon = inst.addMonitor("com.android.music.TrackBrowserActivity", 
+        ActivityMonitor trackBrowserMon = inst.addMonitor("com.organforce.yam.TrackBrowserActivity", 
                 null, false);
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_PICK);
-        intent.setClassName("com.android.music", "com.android.music.TrackBrowserActivity");
+        intent.setClassName("com.organforce.yam", "com.organforce.yam.TrackBrowserActivity");
         getActivity().startActivity(intent);     
         Thread.sleep(MusicPlayerNames.WAIT_LONG_TIME);
         trackBrowserActivity = trackBrowserMon.waitForActivityWithTimeout(2000);

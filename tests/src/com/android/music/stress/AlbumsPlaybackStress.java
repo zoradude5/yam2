@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.music.tests.stress;
+package com.organforce.yam.tests.stress;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -28,8 +28,8 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.view.KeyEvent;
 import android.util.Log;
 
-import com.android.music.AlbumBrowserActivity;
-import com.android.music.tests.MusicPlayerNames;
+import com.organforce.yam.AlbumBrowserActivity;
+import com.organforce.yam.tests.MusicPlayerNames;
 
 public class AlbumsPlaybackStress extends ActivityInstrumentationTestCase <AlbumBrowserActivity>{
   
@@ -38,7 +38,7 @@ public class AlbumsPlaybackStress extends ActivityInstrumentationTestCase <Album
   private String TAG = "AlbumsPlaybackStress";
   
   public AlbumsPlaybackStress() {
-      super("com.android.music",AlbumBrowserActivity.class);
+      super("com.organforce.yam",AlbumBrowserActivity.class);
   }
   
   @Override 

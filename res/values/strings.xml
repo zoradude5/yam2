@@ -234,7 +234,7 @@
     <string name="clear_playlist">Clear playlist</string>
 
     <!-- Activity label. This might show up in the activity-picker -->
-    <string name="musicbrowserlabel">Music</string>
+    <string name="musicbrowserlabel">yam</string>
     <!-- Activity label. This might show up in the activity-picker -->
     <string name="musicshortcutlabel">Music playlist</string>
     <!-- Activity label. This might show up in the activity-picker -->

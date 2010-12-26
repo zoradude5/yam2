@@ -17,12 +17,12 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <View 
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="1px"
         android:background="#ffffffff" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#ff5a5a5a"
         android:paddingTop="1dip"
@@ -52,11 +52,11 @@
             android:layout_marginBottom="2dip"
             android:gravity="center">
 
-            <com.android.music.RepeatingImageButton android:id="@+id/prev" style="@android:style/MediaButton.Previous" />
+            <com.organforce.yam.RepeatingImageButton android:id="@+id/prev" style="@android:style/MediaButton.Previous" />
 
             <ImageButton android:id="@+id/pause" style="@android:style/MediaButton.Play" />
 
-            <com.android.music.RepeatingImageButton android:id="@+id/next" style="@android:style/MediaButton.Next" />
+            <com.organforce.yam.RepeatingImageButton android:id="@+id/next" style="@android:style/MediaButton.Next" />
 
         </LinearLayout>
 
@@ -80,7 +80,7 @@
     <SeekBar android:id="@android:id/progress"
         android:background="#ff5a5a5a"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="36dip"
         android:paddingLeft="8dip"
         android:paddingRight="8dip"

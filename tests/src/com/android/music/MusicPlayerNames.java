@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.music.tests;
+package com.organforce.yam.tests;
 
 import android.os.Environment;
 
