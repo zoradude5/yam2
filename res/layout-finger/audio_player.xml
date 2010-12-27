@@ -26,7 +26,7 @@
         android:orientation="horizontal"
         android:baselineAligned="false"
         android:paddingLeft="11dip"
-        android:paddingBottom="2dip">
+        android:paddingBottom="0dip">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         android:visibility="gone"
         
         android:paddingLeft="11dip"
-        android:paddingBottom="2dip">
+        android:paddingBottom="0dip">
 
         <ImageView
         
@@ -117,35 +117,6 @@
             android:layout_marginRight="2dip"
             android:layout_marginBottom="8dip" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-       <ImageButton android:id="@+id/library"
-            android:src="@drawable/ic_menu_music_library"
-            android:layout_width="85dip"
-            android:layout_height="54dip"
-            android:layout_marginTop="2dip" />
-
-       <ImageButton android:id="@+id/shuffle"
-            android:layout_width="85dip"
-            android:layout_height="54dip"
-            android:layout_marginTop="2dip" />
-
-       <ImageButton android:id="@+id/repeat"
-            android:layout_width="85dip"
-            android:layout_height="54dip"
-            android:layout_marginTop="2dip" />
-
-       <ImageButton android:id="@+id/curplaylist"
-            android:src="@drawable/ic_mp_current_playlist_btn"
-            android:layout_width="85dip"
-            android:layout_height="54dip"
-            android:layout_marginTop="2dip" />
     </LinearLayout>
 
     <include layout="@layout/audio_player_common" />

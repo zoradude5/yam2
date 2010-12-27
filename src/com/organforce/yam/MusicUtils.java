@@ -805,7 +805,8 @@ public class MusicUtils {
             sService.play();
         } catch (RemoteException ex) {
         } finally {
-            Intent intent = new Intent("com.organforce.yam.PLAYBACK_VIEWER")
+            Intent intent = new Intent(context, MediaPlaybackActivity.class)
+            		//"com.organforce.yam.PLAYBACK_VIEWER")
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(intent);
         }
