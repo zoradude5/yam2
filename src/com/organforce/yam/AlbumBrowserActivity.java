@@ -16,6 +16,7 @@
 
 package com.organforce.yam;
 
+import com.organforce.yam.ArtistAlbumBrowserActivity.ArtistAlbumListAdapter.ViewHolder;
 import com.organforce.yam.MusicUtils.ServiceToken;
 
 import android.app.ListActivity;
@@ -122,11 +123,13 @@ public class AlbumBrowserActivity extends ListActivity
                     mAlbumCursor,
                     new String[] {},
                     new int[] {});
+            addAllSongsHeader();
             setListAdapter(mAdapter);
             setTitle(R.string.working_albums);
             getAlbumCursor(mAdapter.getQueryHandler(), null);
         } else {
             mAdapter.setActivity(this);
+            addAllSongsHeader();
             setListAdapter(mAdapter);
             mAlbumCursor = mAdapter.getCursor();
             if (mAlbumCursor != null) {
@@ -135,6 +138,15 @@ public class AlbumBrowserActivity extends ListActivity
                 getAlbumCursor(mAdapter.getQueryHandler(), null);
             }
         }
+        
+    }
+    
+    public void addAllSongsHeader() {
+    	if(mArtistId != null) {
+	        View v = mAdapter.newView(this, null, null);
+	        ((TextView) v.findViewById(R.id.line1)).setText(R.string.all_songs);
+	        getListView().addHeaderView(v);
+    	}
     }
 
     @Override
@@ -398,12 +410,20 @@ public class AlbumBrowserActivity extends ListActivity
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setClass(this, TrackBrowserActivity.class);
-        //intent.setDataAndType(Uri.EMPTY, "vnd.android.cursor.dir/track");
-        intent.putExtra("album", Long.valueOf(id).toString());
-        intent.putExtra("artist", mArtistId);
-        startActivity(intent);
+    	if(position != 0) {
+	        Intent intent = new Intent(Intent.ACTION_PICK);
+	        intent.setClass(this, TrackBrowserActivity.class);
+	        //intent.setDataAndType(Uri.EMPTY, "vnd.android.cursor.dir/track");
+	        intent.putExtra("album", Long.valueOf(id).toString());
+	        intent.putExtra("artist", mArtistId);
+	        startActivity(intent);
+    	}
+    	else {
+	        Intent intent = new Intent(Intent.ACTION_PICK);
+	        intent.setClass(this, TrackBrowserActivity.class);
+	        intent.putExtra("artist", mArtistId);
+	        startActivity(intent);
+    	}
     }
 
     @Override
