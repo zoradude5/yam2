@@ -60,6 +60,7 @@ import android.widget.SectionIndexer;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Toast;
 
 import java.text.Collator;
 import java.util.Arrays;
@@ -1090,6 +1091,15 @@ public class TrackBrowserActivity extends ListActivity
         }
         return ret;
     }
+    
+    private class QueueClickListener implements View.OnClickListener {
+		@Override
+		public void onClick(View v) {
+			Long id = (Long) v.getTag();
+			MusicUtils.playNext(id);
+			Toast.makeText(TrackBrowserActivity.this, R.string.queued_song, Toast.LENGTH_SHORT).show();
+		}
+    }
 
     private class NowPlayingCursor extends AbstractCursor
     {
@@ -1450,6 +1460,9 @@ public class TrackBrowserActivity extends ListActivity
                 iv.setImageResource(R.drawable.ic_mp_move);
             } else {
                 iv.setVisibility(View.GONE);
+                ImageView qb = (ImageView) v.findViewById(R.id.queue_button);
+                qb.setOnClickListener(mActivity.new QueueClickListener());
+                qb.setTag(cursor.getLong(mAudioIdIdx));
             }
             
             ViewHolder vh = new ViewHolder();

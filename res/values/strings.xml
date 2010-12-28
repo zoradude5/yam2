@@ -19,9 +19,12 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="all_songs">All songs</string>
+    <string name="queued_song">Song has been queued</string>
+    
+
     <!-- used in various places to indicate there is one song for a given artist or album -->
     <string name="onesong">1 song</string>
-    <string name="all_songs">All songs</string>
     <!-- used in various places to indicate there is some number other than one songs for a given artist or album. -->
     <plurals name="Nsongs">
         <item quantity="other"><xliff:g id="count">%d</xliff:g> songs</item>

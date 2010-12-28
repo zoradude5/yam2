@@ -23,5 +23,12 @@
     android:ignoreGravity="@+id/icon">
 
     <include layout="@layout/track_list_item_common" />
+    
+    <com.organforce.yam.DontPressWithParentImageView android:id="@+id/queue_button"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentRight="true"
+    	android:src="@drawable/app_music"
+    	/>
 
 </RelativeLayout>
